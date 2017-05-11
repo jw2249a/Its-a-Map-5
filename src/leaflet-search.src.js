@@ -50,7 +50,6 @@ L.Control.Search = L.Control.extend({
 	//  searchText()			'Text searched'        search text by external code
 	//
 	options: {
-		wrapper: '',
 		url: '',						//url for search by ajax request, ex: "search.php?q={s}". Can be function that returns string for dynamic parameter setting
 		layer: null,					//layer where search markers(is a L.LayerGroup)
 		sourceData: null,				//function that fill _recordsCache, passed searching text by first param and callback in second
@@ -89,7 +88,7 @@ L.Control.Search = L.Control.extend({
 				weight: 10,
 				color: 'yellow',
 				stroke: true,
-				fill: false
+				fill: 'yellow'
 			}
 		}
 		//TODO implement can do research on multiple sources layers and remote

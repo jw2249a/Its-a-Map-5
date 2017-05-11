@@ -10,15 +10,21 @@ var searchControl = new L.Control.Search({
       map.setView(latlng, zoom-1); // access the zoom
   }
 });
-searchControl.on('search:locationfound', function(e) {
-
-  //console.log('search:locationfound', );
-  //map.removeLayer(this._markerSearch)
-  e.layer.setStyle({color: 'yellow'});
-}).on('search:collapsed', function(e) {
-  featuresLayer.eachLayer(function(layer) {	//restore feature color
-    featuresLayer.resetStyle(layer);
+function onEachFeature(feature, layer){
+  searchControl.on('search:locationfound', function(e) {
+    var popup = L.popup({closeButton:false})
+    .setLatLng(e.latlng)
+          .setContent("<table>" +
+          "<tr class='oddrowcol'><td><b>Name: </b></td><td>" + feature.properties["NAME"] + "</td></tr>" +
+          "</table>")
+          .openOn(map);
   });
+  layer.on('mouseover', function (e) {
+	this.closePopup();
 });
+popup.on('mouseover', function (e) {
+	this.closePopup();
+});
+
 
 map.addControl(searchControl);
