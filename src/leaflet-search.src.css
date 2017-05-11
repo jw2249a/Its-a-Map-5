@@ -22,8 +22,13 @@
 	float:left;
 	font: verdana;
 	font-size: 20px;
+<<<<<<< HEAD
 	color: #2F5597;
 	background: #FFFFFF;
+=======
+	color: #FFFFFF;
+	background: #2F5597;
+>>>>>>> a9570d3bbb6b735f540a8ab986a56bdc15b7cf99
 	border:0px solid #666;
 	border-radius: 7px;
 	height:2.5em;
@@ -42,7 +47,11 @@
 	height:25px;
 	position:absolute;
 	right: 0;
+<<<<<<< HEAD
 	margin:1.5em 0;
+=======
+	margin:1em 0;
+>>>>>>> a9570d3bbb6b735f540a8ab986a56bdc15b7cf99
 	background: url('../images/search-icon.png') no-repeat 0 -46px;
 	text-decoration:none;
 	filter: alpha(opacity=80);
